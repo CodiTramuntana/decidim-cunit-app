@@ -8,8 +8,8 @@ DECIDIM_VERSION = "0.21.0"
 
 gem "decidim", DECIDIM_VERSION
 gem 'decidim-initiatives', DECIDIM_VERSION
-gem 'decidim-consultations'
-gem 'decidim-conferences'
+gem 'decidim-consultations', DECIDIM_VERSION
+gem 'decidim-conferences', DECIDIM_VERSION
 
 gem "bootsnap", "~> 1.3"
 
