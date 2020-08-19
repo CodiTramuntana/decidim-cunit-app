@@ -7,8 +7,9 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = "0.21.0"
 
 gem "decidim", DECIDIM_VERSION
-# gem "decidim-consultations", "0.21.0"
-# gem "decidim-initiatives", "0.21.0"
+gem 'decidim-initiatives', DECIDIM_VERSION
+gem 'decidim-consultations', DECIDIM_VERSION
+gem 'decidim-conferences', DECIDIM_VERSION
 
 gem "bootsnap", "~> 1.3"
 
