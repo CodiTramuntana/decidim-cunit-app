@@ -784,8 +784,8 @@ DEPENDENCIES
   byebug (~> 11.0)
   daemons
   decidim (= 0.21.0)
-  decidim-conferences
-  decidim-consultations
+  decidim-conferences (= 0.21.0)
+  decidim-consultations (= 0.21.0)
   decidim-dev (= 0.21.0)
   decidim-initiatives (= 0.21.0)
   delayed_job_active_record
