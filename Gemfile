@@ -11,6 +11,7 @@ gem 'decidim-initiatives', DECIDIM_VERSION
 gem 'decidim-consultations', DECIDIM_VERSION
 gem 'decidim-conferences', DECIDIM_VERSION
 gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
+gem 'decidim-term_customizer', git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
 
 gem "bootsnap", "~> 1.3"
 

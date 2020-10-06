@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
+  revision: c4ed0ffa87bd9977c6b470aa815d5dc2ed9f88a5
+  specs:
+    decidim-term_customizer (0.18.0)
+      decidim-admin (>= 0.18.0)
+      decidim-core (>= 0.18.0)
+
+GIT
   remote: https://github.com/MarsBased/decidim-file_authorization_handler.git
   revision: f01aaa7fcc9518228f7f079ca06c58aada8230c2
   specs:
@@ -798,6 +806,7 @@ DEPENDENCIES
   decidim-dev (= 0.21.0)
   decidim-file_authorization_handler!
   decidim-initiatives (= 0.21.0)
+  decidim-term_customizer!
   delayed_job_active_record
   faker (~> 1.9)
   figaro
