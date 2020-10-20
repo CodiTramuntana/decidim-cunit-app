@@ -1,19 +1,20 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: 5da7673bc057b44fd9eca7c1dfc7e36415e0fb2f
+  branch: fix/organization_error_on_manage_new_participant
+  specs:
+    decidim-file_authorization_handler (0.15.0)
+      decidim (>= 0.15.0)
+      decidim-admin (>= 0.15.0)
+      rails (>= 5.2)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
   revision: c4ed0ffa87bd9977c6b470aa815d5dc2ed9f88a5
   specs:
     decidim-term_customizer (0.18.0)
       decidim-admin (>= 0.18.0)
       decidim-core (>= 0.18.0)
-
-GIT
-  remote: https://github.com/MarsBased/decidim-file_authorization_handler.git
-  revision: f01aaa7fcc9518228f7f079ca06c58aada8230c2
-  specs:
-    decidim-file_authorization_handler (0.15.0)
-      decidim (>= 0.15.0)
-      decidim-admin (>= 0.15.0)
-      rails (>= 5.2)
 
 GEM
   remote: https://rubygems.org/
