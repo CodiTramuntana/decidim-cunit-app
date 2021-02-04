@@ -4,14 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.22-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.23-stable' }
 
 gem "decidim", DECIDIM_VERSION
 gem 'decidim-initiatives', DECIDIM_VERSION
 gem 'decidim-consultations', DECIDIM_VERSION
 gem 'decidim-conferences', DECIDIM_VERSION
-# IMPORTANT replace the organization from file_authorization_handler to MarsBased, remove the branch key and remove this comment
-gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "fix/organization_error_on_manage_new_participant"
+gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
 gem 'decidim-term_customizer', git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
 
 gem "bootsnap", "~> 1.3"
