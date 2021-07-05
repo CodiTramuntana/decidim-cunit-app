@@ -15,6 +15,11 @@ default: &default
   # GeoCoder configuration (developer.here.com)
   HERE_API_KEY: "your here api key"
   SECRET_KEY_BASE: "secret_key_base"
+  # Omniauth credentials
+  OMNIAUTH_FACEBOOK_APP_ID: 'fb_app_id'
+  OMNIAUTH_FACEBOOK_APP_SECRET: 'fb_app_secret'
+  OMNIAUTH_GOOGLE_CLIENT_ID: 'google_client_id'
+  OMNIAUTH_GOOGLE_CLIENT_SECRET: 'google_client_secret'
 
 development:
   <<: *default
