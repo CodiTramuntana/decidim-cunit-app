@@ -13,7 +13,7 @@ default: &default
   SMTP_USERNAME: "smtp email username"
   SMTP_PASSWORD: "smtp email password"
   # GeoCoder configuration (developer.here.com)
-  HERE_API_KEY: "your here api key"
+  GEOCODER_LOOKUP_API_KEY: "here_api_key"
   SECRET_KEY_BASE: "secret_key_base"
   # Omniauth credentials
   OMNIAUTH_FACEBOOK_APP_ID: 'fb_app_id'
