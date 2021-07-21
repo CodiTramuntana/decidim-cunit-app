@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.23-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.24-stable' }
 
 gem "decidim", DECIDIM_VERSION
 gem 'decidim-initiatives', DECIDIM_VERSION
@@ -15,7 +15,7 @@ gem 'decidim-term_customizer', git: "https://github.com/CodiTramuntana/decidim-m
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 4.3.3"
+gem "puma", "~> 5"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
