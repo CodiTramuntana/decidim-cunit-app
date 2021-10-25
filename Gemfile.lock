@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
-  revision: 03ba3bc60a8416a236ab7c1f84f91649ed46b9e8
-  specs:
-    decidim-term_customizer (0.18.0)
-      decidim-admin (>= 0.18.0)
-      decidim-core (>= 0.18.0)
-
-GIT
   remote: https://github.com/CodiTramuntana/decidim.git
   revision: a851ee6feb311c3c4412d733d6773d9f94f2d0b7
   branch: release/0.24-stable
@@ -242,6 +234,14 @@ GIT
       decidim (>= 0.15.0)
       decidim-admin (>= 0.15.0)
       rails (>= 5.2)
+
+GIT
+  remote: https://github.com/mainio/decidim-module-term_customizer.git
+  revision: 0e823f4f768f6255de57559c618dcad784c5d655
+  specs:
+    decidim-term_customizer (0.24.0)
+      decidim-admin (~> 0.24.0)
+      decidim-core (~> 0.24.0)
 
 GEM
   remote: https://rubygems.org/
@@ -895,6 +895,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-file_authorization_handler!
   decidim-initiatives!
+  decidim-templates!
   decidim-term_customizer!
   deface
   delayed_job_active_record
