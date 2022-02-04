@@ -237,7 +237,7 @@ GIT
 
 GIT
   remote: https://github.com/mainio/decidim-module-term_customizer.git
-  revision: 0e823f4f768f6255de57559c618dcad784c5d655
+  revision: e027889704ef97456c667c4f4f5b8bd96d162e8b
   specs:
     decidim-term_customizer (0.24.0)
       decidim-admin (~> 0.24.0)
@@ -442,7 +442,7 @@ GEM
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.90.0)
+    excon (0.91.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -504,7 +504,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.13.6)
+    graphql (1.13.8)
     hashdiff (1.0.1)
     hashie (5.0.0)
     highline (2.0.3)
@@ -514,7 +514,7 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http_parser.rb (0.6.0)
-    i18n (1.9.0)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.34)
       activesupport (>= 4.0.2)
@@ -575,7 +575,6 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
-    matrix (0.4.2)
     mdl (0.11.0)
       kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.1)
@@ -667,7 +666,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
-    rack-attack (6.5.0)
+    rack-attack (6.6.0)
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -721,8 +720,8 @@ GEM
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
-    redis (4.5.1)
-    regexp_parser (2.2.0)
+    redis (4.6.0)
+    regexp_parser (2.1.1)
     request_store (1.5.1)
       rack (>= 1.4)
     responders (3.0.1)
