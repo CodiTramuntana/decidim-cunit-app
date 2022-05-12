@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.24-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.25-stable' }
 
 gem "decidim", DECIDIM_VERSION
 gem 'decidim-initiatives', DECIDIM_VERSION
@@ -19,8 +19,6 @@ gem "bootsnap", "~> 1.3"
 gem "puma", "~> 5"
 gem "uglifier", "~> 4.1"
 
-gem "faker", "~> 1.9"
-
 gem "figaro"
 
 gem "deface"
@@ -28,6 +26,7 @@ gem "deface"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
+  gem "faker", "~> 1.9"
 end
 
 group :development do
