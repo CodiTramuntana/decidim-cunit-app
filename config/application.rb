@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
 require "decidim/rails"
 # Add the frameworks used by your app that are not loaded by Decidim.
