@@ -2,10 +2,13 @@
 # This migration comes from decidim (originally 20180810092428)
 
 class MoveOrganizationFieldsToHeroContentBlock < ActiveRecord::Migration[5.2]
+  # This migration made use CarrierWave, which in future will be eliminated.
+  # The organization homepage image was moved to the content block background
+  # image using CarrierWave. This operation has been removed, so if there is
+  # an existing homepage image previous to this migration the content block
+  # background image should be loaded manually
   class ::Decidim::Organization < ApplicationRecord
     self.table_name = :decidim_organizations
-
-    mount_uploader :homepage_image, ::Decidim::HomepageImageUploader
   end
 
   def change
