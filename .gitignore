@@ -58,3 +58,9 @@ spec/decidim_dummy_app/
 !.env.example
 .vscode/
 .DS_Store
+
+/public/packs
+/public/packs-test
+/node_modules
+/public/decidim-packs
+/storage
