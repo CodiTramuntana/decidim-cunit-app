@@ -1,8 +1,18 @@
 es:
+  activemodel:
+    attributes:
+      proposal:
+        author_name: Nombre
+        author_surname: Apellidos
+        author_phone: Teléfono
   decidim:
     components:
       proposals:
         settings:
           global:
             personal_data: Datos personales (nombre, apellidos y teléfono)
-            personal_data_help: Se pedirá a los usuarios que presenten en la propuesta estos datos personales
+            personal_data_help: Se pedirán a los usuarios que presenten la propuesta estos datos personales
+    proposals:
+      proposals:
+        edit:
+          personal_data: Datos personales
