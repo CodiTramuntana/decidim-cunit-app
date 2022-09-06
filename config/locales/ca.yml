@@ -1,0 +1,8 @@
+ca:
+  decidim:
+    components:
+      proposals:
+        settings:
+          global:
+            personal_data: Dades personals (nom, cognoms i telèfon)
+            personal_data_help: Es demanarà als usuaris que presentin a la proposta aquestes dades personals
