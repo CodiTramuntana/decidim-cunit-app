@@ -13,6 +13,14 @@ es:
             personal_data: Datos personales (nombre, apellidos y teléfono)
             personal_data_help: Se pedirán a los usuarios que presenten la propuesta estos datos personales
     proposals:
+      admin:
+        proposals:
+          show:
+            author:
+              name: Nombre
+              surname: Apellidos
+              phone: Teléfono
+            personal_data: Datos personales
       proposals:
         edit:
           personal_data: Datos personales

@@ -30,7 +30,7 @@ gem "nokogiri", "1.13.3"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
-  gem "faker", "~> 1.9"
+  gem "faker"
 end
 
 group :development do
