@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+proposals_gem_dir = Gem::Specification.find_by_name("decidim-proposals").gem_dir
+files = Dir.glob(File.join(proposals_gem_dir, "spec/shared/*.rb"))
+files.each { |f| require(f) }
 
 describe "Admin views proposal details from admin", type: :system do
   include_context "when admin manages proposals"
+  include_context "manage proposals"
   include ActionView::Helpers::TextHelper
 
   let(:participatory_process) { create(:participatory_process, :with_steps, organization: organization, scope: participatory_process_scope) }
