@@ -1,0 +1,26 @@
+ca:
+  activemodel:
+    attributes:
+      proposal:
+        author_name: Nom
+        author_surname: Cognom
+        author_phone: Telèfon
+  decidim:
+    components:
+      proposals:
+        settings:
+          global:
+            personal_data: Dades personals (nom, cognoms i telèfon)
+            personal_data_help: Es demanarà als usuaris que presentin aquestes dades personals al crear propostes
+    proposals:
+      admin:
+        proposals:
+          show:
+            author:
+              name: Nom
+              surname: Cognom
+              phone: Telèfon
+            personal_data: Dades personals
+      proposals:
+        edit:
+          personal_data: Dades personals
