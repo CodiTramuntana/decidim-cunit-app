@@ -11,7 +11,7 @@ es:
         settings:
           global:
             personal_data: Datos personales (nombre, apellidos y teléfono)
-            personal_data_help: Se pedirán a los usuarios que presenten la propuesta estos datos personales
+            personal_data_help: Se pedirá a los usuarios que presenten estos datos personales al crear propuestas
     proposals:
       admin:
         proposals:

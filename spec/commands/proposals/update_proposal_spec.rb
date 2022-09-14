@@ -84,31 +84,6 @@ module Decidim
           end
         end
 
-        describe "when the proposal is not editable by the user" do
-          before do
-            expect(proposal).to receive(:editable_by?).and_return(false)
-          end
-
-          it "broadcasts invalid" do
-            expect { command.call }.to broadcast(:invalid)
-          end
-
-          it "doesn't update the proposal" do
-            expect do
-              command.call
-            end.not_to change(proposal, :title)
-          end
-        end
-
-        context "when the author changinng the author to one that has reached the proposal limit" do
-          let!(:other_proposal) { create :proposal, component: component, users: [author], user_groups: [user_group] }
-          let(:component) { create(:proposal_component, :with_proposal_limit) }
-
-          it "broadcasts invalid" do
-            expect { command.call }.to broadcast(:invalid)
-          end
-        end
-
         describe "when the form is valid" do
           it "broadcasts ok" do
             expect { command.call }.to broadcast(:ok)
@@ -123,136 +98,13 @@ module Decidim
             expect(proposal.body["ca"]).to match(/^#{body}/)
           end
 
-          context "with an author" do
-            let(:user_group) { nil }
+          it "sets the author data" do
+            command.call
+            proposal = Decidim::Proposals::Proposal.last
 
-            it "sets the author" do
-              command.call
-              proposal = Decidim::Proposals::Proposal.last
-
-              expect(proposal).to be_authored_by(author)
-              expect(proposal.identities.include?(user_group)).to be false
-            end
-          end
-
-          context "with a user group" do
-            it "sets the user group" do
-              command.call
-              proposal = Decidim::Proposals::Proposal.last
-
-              expect(proposal).to be_authored_by(author)
-              expect(proposal.identities).to include(user_group)
-            end
-          end
-
-          context "with extra hashtags" do
-            let(:suggested_hashtags) { %w(Hashtag1 Hashtag2) }
-
-            it "saves the extra hashtags" do
-              command.call
-              proposal = Decidim::Proposals::Proposal.last
-              expect(proposal.body["ca"]).to include("_Hashtag1")
-              expect(proposal.body["ca"]).to include("_Hashtag2")
-            end
-          end
-
-          context "when geocoding is enabled" do
-            let(:component) { create(:proposal_component, :with_geocoding_enabled) }
-
-            context "when the has address checkbox is checked" do
-              let(:has_address) { true }
-
-              context "when the address is present" do
-                let(:address) { "Some address" }
-
-                before do
-                  stub_geocoding(address, [latitude, longitude])
-                end
-
-                it "sets the latitude and longitude" do
-                  command.call
-                  proposal = Decidim::Proposals::Proposal.last
-
-                  expect(proposal.latitude).to eq(latitude)
-                  expect(proposal.longitude).to eq(longitude)
-                end
-              end
-            end
-          end
-
-          context "when attachments are allowed" do
-            let(:component) { create(:proposal_component, :with_attachments_allowed) }
-            let(:uploaded_files) do
-              [
-                Decidim::Dev.test_file("Exampledocument.pdf", "application/pdf")
-              ]
-            end
-            let(:uploaded_photos) do
-              [
-                Decidim::Dev.test_file("city.jpeg", "image/jpeg")
-              ]
-            end
-
-            it "creates multiple atachments for the proposal" do
-              expect { command.call }.to change(Decidim::Attachment, :count).by(2)
-              last_attachment = Decidim::Attachment.last
-              expect(last_attachment.attached_to).to eq(proposal)
-            end
-
-            context "with previous attachments" do
-              let!(:file) { create(:attachment, :with_pdf, attached_to: proposal) }
-              let!(:photo) { create(:attachment, :with_image, attached_to: proposal) }
-              let(:current_files) { [file] }
-              let(:current_photos) { [photo] }
-
-              it "does not remove older attachments" do
-                expect { command.call }.to change(Decidim::Attachment, :count).from(2).to(4)
-              end
-            end
-          end
-
-          context "when attachments are allowed and file is invalid" do
-            let(:component) { create(:proposal_component, :with_attachments_allowed) }
-            let(:uploaded_files) do
-              [
-                Decidim::Dev.test_file("city.jpeg", "image/jpeg"),
-                Decidim::Dev.test_file("verify_user_groups.csv", "text/csv")
-              ]
-            end
-
-            it "does not create atachments for the proposal" do
-              expect { command.call }.to change(Decidim::Attachment, :count).by(0)
-            end
-
-            it "broadcasts invalid" do
-              expect { command.call }.to broadcast(:invalid)
-            end
-          end
-
-          context "when documents and gallery are allowed" do
-            let(:component) { create(:proposal_component, :with_attachments_allowed) }
-            let(:uploaded_photos) { [Decidim::Dev.test_file("city.jpeg", "image/jpeg")] }
-            let(:uploaded_files) do
-              [
-                Decidim::Dev.test_file("Exampledocument.pdf", "application/pdf")
-              ]
-            end
-
-            it "Create gallery and documents for the proposal" do
-              expect { command.call }.to change(Decidim::Attachment, :count).by(2)
-            end
-          end
-
-          context "when gallery are allowed" do
-            let(:component) { create(:proposal_component, :with_attachments_allowed) }
-            let(:uploaded_photos) { [Decidim::Dev.test_file("city.jpeg", "image/jpeg")] }
-
-            it "creates an image attachment for the proposal" do
-              expect { command.call }.to change(Decidim::Attachment, :count).by(1)
-              last_proposal = Decidim::Proposals::Proposal.last
-              last_attachment = Decidim::Attachment.last
-              expect(last_attachment.attached_to).to eq(last_proposal)
-            end
+            expect(proposal.author_name).to match(/^#{author_name}/)
+            expect(proposal.author_surname).to match(/^#{author_surname}/)
+            expect(proposal.author_phone).to match(/^#{author_phone}/)
           end
         end
       end

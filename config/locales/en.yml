@@ -11,7 +11,7 @@ en:
         settings:
           global:
             personal_data: Personal data (name, surname and phone)
-            personal_data_help: Users will be asked for this personal data in the proposal
+            personal_data_help: Users will be asked to submit this personal data when creating proposals
     proposals:
       admin:
         proposals:
