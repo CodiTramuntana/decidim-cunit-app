@@ -26,21 +26,29 @@ jobs:
           --health-retries 5
         env:
           POSTGRES_PASSWORD: postgres
+      redis:
+        image: redis:3.2-alpine
+        ports: ["6379:6379"]
     env:
       DB_TEST_DATABASE: decidim_cunit_test
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
-      DB_HOST: localhost
       SECRET_KEY_BASE: "secret_key_base"
 
     steps:
       - uses: actions/checkout@v2.0.0
         with:
           fetch-depth: 1
+
       - uses: ruby/setup-ruby@master
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
-          bundler-cache: true
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - run: npm install
+
       - name: Recover Ruby dependency cache
         uses: actions/cache@v1
         with:
@@ -50,9 +58,6 @@ jobs:
             ${{ runner.OS }}-app-rubydeps-${{ env.cache-name }}-
             ${{ runner.OS }}-app-rubydeps-
 
-      - name: Set bundle local config vendor/bundle path
-        run: bundle config set --local path 'vendor/bundle'
-
       - name: Install Ruby deps
         uses: nick-invision/retry@v2
         with:
@@ -61,12 +66,16 @@ jobs:
           retry_on: error
           command: bundle install --jobs 4 --retry 3
 
-      - uses: actions/setup-node@v2
+      - name: Generate test_app
+        run: |
+          RAILS_ENV=test bundle exec rails db:create
+          RAILS_ENV=test bundle exec rails db:migrate
+
+      - name: Run RSpec
+        uses: nick-invision/retry@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      - run: npm install
-      - run: bundle exec rake db:test:prepare
-        name: Setup database
-      - run: bundle exec rspec
-        name: Run specs
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_on: error
+          command: CI=1 RAILS_ENV=test bundle exec rspec --backtrace
+
