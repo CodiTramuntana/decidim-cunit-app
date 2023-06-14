@@ -8,6 +8,9 @@ require "decidim/rails"
 # require "action_mailbox/engine"
 # require "action_text/engine"
 
+require "net/http"
+require "openssl"
+require "resolv-replace"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
