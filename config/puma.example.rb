@@ -7,9 +7,11 @@ stdout_redirect "log/puma.log", "log/puma_error.log", true
 pidfile "tmp/pids/puma.pid"
 state_path "tmp/pids/puma.state"
 
-preload_app!
+# These make it crash on Heroku
+# pidfile "tmp/pids/puma.pid"
+# state_path "tmp/pids/puma.state"
 
-activate_control_app
+preload_app!
 
 rackup DefaultRackup
 port ENV["PORT"] || 3000
