@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require "spec_helper"
 
 describe "Homepage", type: :system do
   include Decidim::SanitizeHelper
@@ -10,16 +10,15 @@ describe "Homepage", type: :system do
       :organization,
       name: "Decidim Application",
       default_locale: :en,
-      available_locales: [:en, :ca, :es]
+      available_locales: [:ca, :en, :es]
     )
   end
-  let!(:hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :hero, settings: { "welcome_text_en"=>"Welcome to Decidim Application" } }
+  let!(:hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :hero, settings: { "welcome_text_ca"=>"Benvinguda a Decidim Application" } }
   let!(:sub_hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :sub_hero }
 
   before do
-    I18n.locale = :en
     switch_to_host(organization.host)
-    visit decidim.root_path
+    visit decidim.root_path(locale: I18n.locale)
   end
 
   it "loads and shows organization name and main blocks" do

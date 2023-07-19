@@ -52,9 +52,9 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
-  # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "decidim_cunit_#{Rails.env}"
 
+  # config.active_job.queue_adapter = :delayed_job
+  config.active_job.queue_adapter = :sidekiq
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -84,6 +84,17 @@ Rails.application.configure do
     tls: true
   }
 
+  if Rails.application.secrets.sendgrid
+    config.action_mailer.default_options = {
+      "X-SMTPAPI" => {
+        filters: {
+          clicktrack: { settings: { enable: 0 } },
+          opentrack: { settings: { enable: 0 } }
+        }
+      }.to_json
+    }
+  end
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
@@ -100,3 +111,4 @@ Rails.application.configure do
   # Store files locally.
   config.active_storage.service = :local
 end
+7
