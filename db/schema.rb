@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_28_102728) do
+ActiveRecord::Schema.define(version: 2023_08_09_150823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1955,7 +1955,7 @@ ActiveRecord::Schema.define(version: 2023_07_28_102728) do
     t.index ["unlock_token"], name: "index_decidim_users_on_unlock_token", unique: true
   end
 
-   create_table "delayed_jobs", force: :cascade do |t|
+  create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
     t.text "handler", null: false
