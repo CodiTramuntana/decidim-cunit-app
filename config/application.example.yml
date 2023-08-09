@@ -1,8 +1,8 @@
 default: &default
-  DECIDIM_APPLICATION_NAME: Decidim Clean APP
+  DECIDIM_APPLICATION_NAME: Ajuntament Cunit
 #  DECIDIM_MAILER_SENDER: ??????
   DECIDIM_AVAILABLE_LOCALES: "ca,en,es"
-  DECIDIM_DEFAULT_LOCALE: "ca"
+  DECIDIM_DEFAULT_LOCALE: "en"
   DECIDIM_CORS_ENABLED: "true"
   DECIDIM_TRACK_NEWSLETTER_LINKS: auto
   DECIDIM_THROTTLING_MAX_REQUESTS: "250"
@@ -14,8 +14,8 @@ default: &default
   DB_PORT: "5432"
   DB_POOL: "<%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>"
   DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
-  DB_DATABASE: "clean_app_dev"
-  DB_TEST_DATABASE: "clean_app_test"
+  DB_DATABASE: "decidim_cunit_development"
+  DB_TEST_DATABASE: "decidim_cunit_test"
   DB_USERNAME: "db_username"
   DB_PASSWORD: "db_username_password"
   # Mailer configuration

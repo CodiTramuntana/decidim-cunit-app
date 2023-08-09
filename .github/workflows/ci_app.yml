@@ -30,8 +30,8 @@ jobs:
         image: redis:3.2-alpine
         ports: ["6379:6379"]
     env:
+      DB_DATABASE: decidim_cunit_development
       DB_TEST_DATABASE: decidim_cunit_test
-      DB_DATABASE: app
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
       DB_HOST: localhost

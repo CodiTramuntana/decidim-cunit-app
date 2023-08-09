@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_28_055508) do
+ActiveRecord::Schema.define(version: 2023_07_28_102728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -967,6 +967,12 @@ ActiveRecord::Schema.define(version: 2023_06_28_055508) do
     t.index ["state"], name: "index_decidim_initiatives_committee_members_on_state"
   end
 
+  create_table "decidim_initiatives_settings", force: :cascade do |t|
+    t.string "initiatives_order", default: "random"
+    t.bigint "decidim_organization_id"
+    t.index ["decidim_organization_id"], name: "index_decidim_initiatives_settings_on_decidim_organization_id"
+  end
+
   create_table "decidim_initiatives_type_scopes", force: :cascade do |t|
     t.bigint "decidim_initiatives_types_id"
     t.bigint "decidim_scopes_id"
@@ -997,6 +1003,7 @@ ActiveRecord::Schema.define(version: 2023_06_28_055508) do
     t.boolean "area_enabled", default: false, null: false
     t.boolean "child_scope_threshold_enabled", default: false, null: false
     t.boolean "only_global_scope_enabled", default: false, null: false
+    t.boolean "comments_enabled", default: true, null: false
     t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
   end
 
@@ -1948,6 +1955,21 @@ ActiveRecord::Schema.define(version: 2023_06_28_055508) do
     t.index ["unlock_token"], name: "index_decidim_users_on_unlock_token", unique: true
   end
 
+   create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "decidim_verifications_conflicts", force: :cascade do |t|
     t.bigint "current_user_id"
     t.bigint "managed_user_id"
@@ -2049,6 +2071,7 @@ ActiveRecord::Schema.define(version: 2023_06_28_055508) do
   add_foreign_key "decidim_editor_images", "decidim_organizations"
   add_foreign_key "decidim_editor_images", "decidim_users", column: "decidim_author_id"
   add_foreign_key "decidim_identities", "decidim_organizations"
+  add_foreign_key "decidim_initiatives_settings", "decidim_organizations"
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_process_types", "decidim_organizations"
