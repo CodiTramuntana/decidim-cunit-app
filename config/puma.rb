@@ -37,6 +37,7 @@ pidfile ENV.fetch("PIDFILE", "tmp/pids/server.pid")
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+preload_app!
 
 # If you are preloading your application and using Active Record, it's
 # recommended that you close any connections to the database before workers

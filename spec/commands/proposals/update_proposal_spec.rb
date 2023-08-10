@@ -70,7 +70,7 @@ module Decidim
 
         describe "when the form is not valid" do
           before do
-            expect(form).to receive(:invalid?).and_return(true)
+            allow(form).to receive(:invalid?).and_return(true)
           end
 
           it "broadcasts invalid" do
@@ -93,9 +93,9 @@ module Decidim
             command.call
             proposal.reload
             expect(proposal.title).to be_kind_of(Hash)
-            expect(proposal.title["ca"]).to eq title
+            expect(proposal.title["en"]).to eq title
             expect(proposal.body).to be_kind_of(Hash)
-            expect(proposal.body["ca"]).to match(/^#{body}/)
+            expect(proposal.body["en"]).to match(/^#{body}/)
           end
 
           it "sets the author data" do

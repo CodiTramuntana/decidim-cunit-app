@@ -1,11 +1,23 @@
 default: &default
+  DECIDIM_APPLICATION_NAME: Ajuntament Cunit
+#  DECIDIM_MAILER_SENDER: ??????
+  DECIDIM_AVAILABLE_LOCALES: "ca,en,es"
+  DECIDIM_DEFAULT_LOCALE: "en"
+  DECIDIM_CORS_ENABLED: "true"
+  DECIDIM_TRACK_NEWSLETTER_LINKS: auto
+  DECIDIM_THROTTLING_MAX_REQUESTS: "250"
+  # DECIDIM_THROTTLING_PERIOD in minutes
+  DECIDIM_THROTTLING_PERIOD: "1"
+  DECIDIM_FOLLOW_HTTP_X_FORWARDED_HOST: "true"
+
   # Database configuration
   DB_PORT: "5432"
-  DB_POOL: <%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>
+  DB_POOL: "<%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>"
   DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
-  DATABASE_DB: "database name"
-  DATABASE_PASSWORD: "database username"
-  DATABASE_USERNAME: "database password"
+  DB_DATABASE: "decidim_cunit_development"
+  DB_TEST_DATABASE: "decidim_cunit_test"
+  DB_USERNAME: "db_username"
+  DB_PASSWORD: "db_username_password"
   # Mailer configuration
   SMTP_ADDRESS: "smtp email address"
   SMTP_DOMAIN: "smtp email domain"
@@ -14,7 +26,7 @@ default: &default
   SMTP_PASSWORD: "smtp email password"
   # GeoCoder configuration (developer.here.com)
   GEOCODER_LOOKUP_API_KEY: "here_api_key"
-  SECRET_KEY_BASE: "secret_key_base"
+  SECRET_KEY_BASE: "must be different for each environment; run bin/rake secret and copy here"
   # Omniauth credentials
   OMNIAUTH_FACEBOOK_APP_ID: 'fb_app_id'
   OMNIAUTH_FACEBOOK_APP_SECRET: 'fb_app_secret'
@@ -22,6 +34,9 @@ default: &default
   OMNIAUTH_GOOGLE_CLIENT_SECRET: 'google_client_secret'
 
 development:
+  <<: *default
+
+test:
   <<: *default
 
 integration:
