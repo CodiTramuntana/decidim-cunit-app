@@ -883,6 +883,7 @@ DEPENDENCIES
   figaro (>= 1.1.1)
   letter_opener_web
   listen
+  matrix
   openssl
   psych (< 4)
   puma
