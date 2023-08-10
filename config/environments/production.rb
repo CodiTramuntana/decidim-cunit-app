@@ -111,4 +111,3 @@ Rails.application.configure do
   # Store files locally.
   config.active_storage.service = :local
 end
-7
