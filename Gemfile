@@ -21,6 +21,8 @@ gem "puma"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker"
 
+gem "matrix"
+
 gem "figaro", ">= 1.1.1"
 gem "openssl"
 
