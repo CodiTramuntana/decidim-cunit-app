@@ -23,6 +23,34 @@ By the moment, there's no Here Maps configured yet.
 
 You're good to go!
 
+## Keep your fork synced
+
+To keep your fork up-to-date with the upstream repository, i.e., to upgrade decidim, you must configure a remote that points to the upstream repository in Git.
+
+```console
+# List the current configured remote repository for your fork.
+$ git remote -v
+# Specify the new remote upstream repository that will be synced with the fork.
+$ git remote add decidim-clean git@gitlab.coditdev.net:decidim/decidim-clean-app.git
+# Verify the new decidim-clean repository you've specified for your fork.
+$ git remote -v
+```
+Syncing a fork
+```console
+# Check out your fork's local master branch.
+$ git checkout master
+# Incorporate changes from the decidim-clean repository into the current branch.
+$ git pull decidim-clean
+```
+
+## Customize your fork
+
+The following files should be modified:
+
+- package.json
+- config/application.rb
+- config/initializers/decidim.rb
+
 ## Decorators and overrides
 Decorators and overrides must be checked in Decidim upgrades.
 
@@ -51,3 +79,7 @@ Require missing factories in `spec/factories.rb`
 Add `require "rails_helper"` to your specs and execute them from the **root directory**, i.e.:
 
 `bundle exec rspec spec`
+
+## Upgrades with clean-app
+	
+Documentation in `docs/upgrade_apps.md`.

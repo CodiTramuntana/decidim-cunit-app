@@ -13,7 +13,7 @@ describe "Homepage", type: :system do
       available_locales: [:ca, :en, :es]
     )
   end
-  let!(:hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :hero, settings: { "welcome_text_ca"=>"Benvinguda a Decidim Application", "welcome_text_en" => "Welcome to Decidim Application" } }
+  let!(:hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :hero, settings: { "welcome_text_ca"=>"Benvinguda a Decidim Application" } }
   let!(:sub_hero) { create :content_block, organization: organization, scope_name: :homepage, manifest_name: :sub_hero }
 
   before do
@@ -26,7 +26,7 @@ describe "Homepage", type: :system do
 
     expect(page).to have_content("Decidim Application")
     within "section.hero .hero__container" do
-      expect(page).to have_content("Welcome to Decidim Application")
+      expect(page).to have_content("Benvinguda a Decidim Application")
     end
     within "section.subhero" do
       subhero_msg= translated(organization.description).gsub(%r{</p>\s+<p>}, "<br><br>").gsub(%r{<p>(((?!</p>).)*)</p>}mi, "\\1")

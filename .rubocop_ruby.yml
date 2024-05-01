@@ -1206,9 +1206,6 @@ RSpec/MessageSpies:
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false
-
 RSpec/NestedGroups:
   Max: 7
 
