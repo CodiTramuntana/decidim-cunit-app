@@ -72,6 +72,7 @@ Configure the name of the test DB in you `config/application.yml` file and run:
 ```
 RAILS_ENV=test bundle exec rails db:create
 RAILS_ENV=test bundle exec rails db:migrate
+RAILS_ENV=test bundle exec rails db:schema:load
 ```
 
 Require missing factories in `spec/factories.rb`
