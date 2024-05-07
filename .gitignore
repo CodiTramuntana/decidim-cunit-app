@@ -21,10 +21,6 @@ public/uploads/
 # Ignore application configuration
 /config/application.yml
 /config/puma.rb
-# Ignore deploy secrets
-/config/deploy.rb
-/config/deploy/*
-/Capfile
 
 spec/decidim_dummy_app/
 
