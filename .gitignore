@@ -7,10 +7,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -26,11 +22,6 @@ public/uploads/
 /config/application.yml
 /config/puma.rb
 
-/public/sw.js.br
-/public/sw.js.gz
-/public/sw.js.map.br
-/public/sw.js.map.gz
-
 spec/decidim_dummy_app/
 
 /public/packs/
@@ -45,5 +36,12 @@ storage/
 /yarn-error.log
 .yarn-integrity
 yarn-debug.log*
+yarn.lock
 
 /config/master.key
+
+public/sw.js.br
+public/sw.js.gz
+public/sw.js.map.br
+public/sw.js.map.gz
+
