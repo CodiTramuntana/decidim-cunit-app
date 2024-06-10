@@ -20,8 +20,8 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim.git
-  revision: 01e79542ce7220d7a385a2144280ec9a881b64dc
-  branch: release/0.27-stable
+  revision: 6cd96a803d25f357e7d859cd8c49c17b9f651d3b
+  branch: fix/choose_template_surveys
   specs:
     decidim-accountability (0.27.6)
       decidim-comments (= 0.27.6)
@@ -189,8 +189,8 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim.git
-  revision: 01e79542ce7220d7a385a2144280ec9a881b64dc
-  branch: release/0.27-stable
+  revision: 6cd96a803d25f357e7d859cd8c49c17b9f651d3b
+  branch: fix/choose_template_surveys
   specs:
     decidim (0.27.6)
       decidim-accountability (= 0.27.6)
