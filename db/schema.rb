@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_05_06_152343) do
+ActiveRecord::Schema.define(version: 2024_07_02_082506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -424,6 +424,8 @@ ActiveRecord::Schema.define(version: 2024_05_06_152343) do
     t.string "decidim_participatory_space_type"
     t.integer "decidim_participatory_space_id"
     t.datetime "deleted_at"
+    t.integer "up_votes_count", default: 0, null: false
+    t.integer "down_votes_count", default: 0, null: false
     t.index ["created_at"], name: "index_decidim_comments_comments_on_created_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_comments_comments_on_decidim_author"
     t.index ["decidim_author_id"], name: "decidim_comments_comment_author"
@@ -1330,8 +1332,8 @@ ActiveRecord::Schema.define(version: 2024_05_06_152343) do
     t.string "id_documents_methods", default: ["online"], array: true
     t.jsonb "id_documents_explanation_text", default: {}
     t.boolean "user_groups_enabled", default: false, null: false
-    t.jsonb "colors", default: {}
     t.jsonb "smtp_settings"
+    t.jsonb "colors", default: {}
     t.boolean "force_users_to_authenticate_before_access_organization", default: false
     t.jsonb "omniauth_settings"
     t.boolean "rich_text_editor_in_public_views", default: false
@@ -1574,6 +1576,7 @@ ActiveRecord::Schema.define(version: 2024_05_06_152343) do
     t.string "author_name"
     t.string "author_surname"
     t.string "author_phone"
+    t.integer "valuation_assignments_count", default: 0
     t.index "md5((body)::text)", name: "decidim_proposals_proposal_body_search"
     t.index "md5((title)::text)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
@@ -1922,11 +1925,11 @@ ActiveRecord::Schema.define(version: 2024_05_06_152343) do
     t.integer "following_count", default: 0, null: false
     t.integer "followers_count", default: 0, null: false
     t.string "notification_types", default: "all", null: false
-    t.datetime "officialized_at"
-    t.jsonb "officialized_as"
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.datetime "officialized_at"
+    t.jsonb "officialized_as"
     t.datetime "admin_terms_accepted_at"
     t.string "session_token"
     t.string "direct_message_types", default: "all", null: false
@@ -1985,8 +1988,8 @@ ActiveRecord::Schema.define(version: 2024_05_06_152343) do
     t.datetime "failed_at"
     t.string "locked_by"
     t.string "queue"
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
