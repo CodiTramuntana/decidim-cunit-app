@@ -15,6 +15,7 @@
 
 .byebug_history
 .rspec-failures
+.rake_tasks~
 
 # Ignore public uploads
 public/uploads/
