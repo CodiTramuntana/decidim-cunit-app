@@ -14,6 +14,7 @@
 <h3>
 <a id="using-the-graphql-api" class="anchor" href="#using-the-graphql-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using the GraphQL APi</h3>
 <p>The GraphQL format is a JSON formatted text that is specified in a query. Response is a JSON object as well. For details about specification check the official <a href="https://graphql.org/learn/">GraphQL site</a>.</p>
+<p>Exercise caution when utilizing the output of this API, as it may include HTML that has not been escaped. Take particular care in handling this data, specially if you intend to render it on a webpage.</p>
 <p>For instance, you can check the version of a Decidim installation by using <code>curl</code> in the terminal:</p>
 <pre><code>curl -sSH "Content-Type: application/json" \
 -d '{"query": "{ decidim { version } }"}' \
@@ -662,6 +663,48 @@ If no language is specified, the configured as default in the organization will 
       
         
       <li>
+        <a href="/api/docs/object/conference/" class="sidebar-link">
+          Conference
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/conferencemedialink/" class="sidebar-link">
+          ConferenceMediaLink
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/conferencepartner/" class="sidebar-link">
+          ConferencePartner
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/conferencespeaker/" class="sidebar-link">
+          ConferenceSpeaker
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/consultation/" class="sidebar-link">
+          Consultation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/consultationquestion/" class="sidebar-link">
+          ConsultationQuestion
+        </a>
+      </li>
+      
+        
+      <li>
         <a href="/api/docs/object/coordinates/" class="sidebar-link">
           Coordinates
         </a>
@@ -713,6 +756,27 @@ If no language is specified, the configured as default in the organization will 
       <li>
         <a href="/api/docs/object/hashtagtype/" class="sidebar-link">
           HashtagType
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/initiative/" class="sidebar-link">
+          Initiative
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/initiativecommitteemembertype/" class="sidebar-link">
+          InitiativeCommitteeMemberType
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/initiativetype/" class="sidebar-link">
+          InitiativeType
         </a>
       </li>
       
@@ -1231,6 +1295,13 @@ If no language is specified, the configured as default in the organization will 
         <li>
           <a href="/api/docs/interface/fingerprintinterface/" class="sidebar-link">
             FingerprintInterface
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/api/docs/interface/initiativetypeinterface/" class="sidebar-link">
+            InitiativeTypeInterface
           </a>
         </li>
       
