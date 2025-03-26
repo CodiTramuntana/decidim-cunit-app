@@ -4,6 +4,7 @@
 require "spec_helper"
 ENV["RAILS_ENV"] ||= "test"
 
+require "decidim/dev"
 require File.expand_path("../config/environment", __dir__)
 
 # Prevent database truncation if the environment is production
@@ -11,7 +12,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
-require "decidim/dev"
 Decidim::Dev.dummy_app_path = File.expand_path(File.join(__dir__, ".."))
 
 require "decidim/dev/test/base_spec_helper"
