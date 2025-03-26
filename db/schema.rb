@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_03_25_090437) do
+ActiveRecord::Schema.define(version: 2025_03_26_090131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1832,6 +1832,8 @@ ActiveRecord::Schema.define(version: 2025_03_25_090437) do
     t.jsonb "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "field_values", default: {}
+    t.string "target"
     t.index ["decidim_organization_id"], name: "index_decidim_templates_organization"
     t.index ["templatable_type", "templatable_id"], name: "index_decidim_templates_templatable"
   end
