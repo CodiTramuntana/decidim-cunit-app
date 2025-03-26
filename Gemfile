@@ -15,11 +15,11 @@ gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
 
 gem "daemons"
-gem "delayed_job_active_record"
-gem "openssl"
-gem "matrix"
-gem "puma"
 gem "deface"
+gem "delayed_job_active_record"
+gem "matrix"
+gem "openssl"
+gem "puma"
 gem "whenever"
 
 # TODO: Psych problem: https://github.com/laserlemon/figaro/issues/289

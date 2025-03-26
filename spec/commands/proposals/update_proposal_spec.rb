@@ -19,7 +19,7 @@ module Decidim
         )
       end
 
-      let!(:proposal) { create :proposal, component: component, users: [author] }
+      let!(:proposal) { create(:proposal, component: component, users: [author]) }
       let(:author) { create(:user, organization: organization) }
 
       let(:user_group) do
@@ -81,9 +81,9 @@ module Decidim
           it "updates the proposal" do
             subject
             proposal.reload
-            expect(proposal.title).to be_kind_of(Hash)
+            expect(proposal.title).to be_a(Hash)
             expect(proposal.title["en"]).to eq title
-            expect(proposal.body).to be_kind_of(Hash)
+            expect(proposal.body).to be_a(Hash)
             expect(proposal.body["en"]).to match(/^#{body}/)
           end
 
