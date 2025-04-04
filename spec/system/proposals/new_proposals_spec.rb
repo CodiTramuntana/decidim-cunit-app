@@ -33,7 +33,7 @@ describe "Proposals" do
 
       it "show personal data fields" do
         click_link_or_button "New proposal"
-        path = "#{main_component_path(component)}proposals/#{draft.id}/edit_draft?component_id=#{component.id}&question_slug=#{component.participatory_space.slug}"
+        path = "#{main_component_path(component)}/#{draft.id}/edit_draft?component_id=#{component.id}&question_slug=#{component.participatory_space.slug}"
         expect(page).to have_current_path(path)
         expect(page).to have_content("Personal data")
         expect(page).to have_content("Name")
