@@ -39,6 +39,7 @@ storage/
 /yarn-error.log
 .yarn-integrity
 yarn-debug.log*
+yarn.lock
 
 /config/master.key
 tailwind.config.js
