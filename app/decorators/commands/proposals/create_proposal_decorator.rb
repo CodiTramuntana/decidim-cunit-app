@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+class Decidim::Proposals::CreateProposalDecorator
+end
+
 Decidim::Proposals::CreateProposal.class_eval do
   def create_proposal
     PaperTrail.request(enabled: false) do

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+module Lib::Proposals::ProposalSerializerDecorator
+end
+
 Decidim::Proposals::ProposalSerializer.class_eval do
   alias_method :original_serialize, :serialize
 

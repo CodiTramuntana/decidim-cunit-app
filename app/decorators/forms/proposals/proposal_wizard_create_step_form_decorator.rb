@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+class Forms::Proposals::ProposalWizardCreateStepFormDecorator
+end
+
 Decidim::Proposals::ProposalWizardCreateStepForm.class_eval do
   attribute :author_name, String
   attribute :author_surname, String

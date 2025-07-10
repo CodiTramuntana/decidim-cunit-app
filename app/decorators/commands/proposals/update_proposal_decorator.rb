@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+class Commands::Proposals::UpdateProposalDecorator
+end
+
 Decidim::Proposals::UpdateProposal.class_eval do
   def attributes
     {
