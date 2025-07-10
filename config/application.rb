@@ -18,7 +18,7 @@ Bundler.require(*Rails.groups)
 module DecidimCunit
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -26,7 +26,7 @@ module DecidimCunit
     # the framework and any gems in your application.
     # Make decorators available
     config.to_prepare do
-      Dir.glob(Rails.root.join("app/decorators/**/*_decorator*.rb")).each do |c|
+      Rails.root.glob("app/decorators/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end
     end

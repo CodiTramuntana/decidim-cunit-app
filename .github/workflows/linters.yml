@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 3.0.7
+  RUBY_VERSION: 3.1.7
 
 jobs:
   test-report:
@@ -33,6 +33,7 @@ jobs:
             ${{ runner.OS }}-rubydeps-${{ env.cache-name }}-
             ${{ runner.OS }}-rubydeps-
             ${{ runner.OS }}-
+
       - name: Set bundle local config configvendor/bundle path
         run: bundle config set --local path 'vendor/bundle'
 

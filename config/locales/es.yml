@@ -21,6 +21,9 @@ es:
               surname: Apellidos
               phone: Teléfono
             personal_data: Datos personales
+          index:
+            assign_to_valuator_button: Asignar
+            unassign_from_valuator_button: Dejar de asignar
       proposals:
         edit:
           personal_data: Datos personales

@@ -21,6 +21,9 @@ ca:
               surname: Cognom
               phone: Telèfon
             personal_data: Dades personals
+          index: 
+            assign_to_valuator_button: Assignar
+            unassign_from_valuator_button: Deixar d'assignar
       proposals:
         edit:
           personal_data: Dades personals
