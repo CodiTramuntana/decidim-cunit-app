@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-cdtb.git
-  revision: 960b7b978c0c5a09db739f8b7f9f9927958fb042
+  revision: 2bae4569d65e086bdbc29f69d87f40537df07325
   branch: main
   specs:
-    decidim-cdtb (0.5.2)
+    decidim-cdtb (0.5.3)
       decidim (>= 0.28.0)
       rails (>= 6)
       ruby-progressbar
@@ -412,11 +412,11 @@ GEM
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    faraday (2.13.1)
+    faraday (2.13.2)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-net_http (3.4.0)
+    faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     ffi (1.17.2-x86_64-linux-gnu)
     figjam (2.0.1)
@@ -479,7 +479,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.8, >= 1.8.1)
       terminal-table (>= 1.5.1)
-    icalendar (2.11.1)
+    icalendar (2.11.2)
       base64
       ice_cube (~> 0.16)
       logger
@@ -492,7 +492,7 @@ GEM
       rails (>= 3.2.0)
     io-console (0.8.0)
     json (2.12.2)
-    jwt (2.10.1)
+    jwt (3.1.2)
       base64
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -535,7 +535,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0610)
+    mime-types-data (3.2025.0708)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -544,7 +544,7 @@ GEM
       bigdecimal (~> 3.1)
     net-http (0.6.0)
       uri
-    net-imap (0.5.8)
+    net-imap (0.5.9)
       date
       net-protocol
     net-pop (0.1.2)
@@ -596,7 +596,7 @@ GEM
       rack
     openssl (3.3.0)
     orm_adapter (0.5.0)
-    ostruct (0.6.1)
+    ostruct (0.6.2)
     paper_trail (12.3.0)
       activerecord (>= 5.2)
       request_store (~> 1.1)
@@ -810,7 +810,7 @@ GEM
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     thor (1.3.2)
-    tilt (2.6.0)
+    tilt (2.6.1)
     timeout (0.4.3)
     trailblazer-option (0.1.2)
     tzinfo (2.0.6)
@@ -838,8 +838,8 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    web-push (3.0.1)
-      jwt (~> 2.0)
+    web-push (3.0.2)
+      jwt (~> 3.0)
       openssl (~> 3.0)
     webmock (3.25.1)
       addressable (>= 2.8.0)
