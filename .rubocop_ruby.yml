@@ -68,7 +68,7 @@ AllCops:
   # If a value is specified for TargetRubyVersion then it is used.
   # Else if .ruby-version exists and it contains an MRI version it is used.
   # Otherwise we fallback to the oldest officially supported Ruby version (2.0).
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.1
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
@@ -243,7 +243,7 @@ Style/BlockDelimiters:
     - let!
     - subject
     - watch
-  IgnoredMethods:
+  AllowedMethods:
     # Methods that can be either procedural or functional and cannot be
     # categorised from their usage alone, e.g.
     #
@@ -932,7 +932,7 @@ Style/SymbolArray:
 Style/SymbolProc:
   # A list of method names to be ignored by the check.
   # The names should be fairly unique, otherwise you'll end up ignoring lots of code.
-  IgnoredMethods:
+  AllowedMethods:
     - respond_to
     - define_method
 
@@ -1019,7 +1019,7 @@ Naming/VariableName:
     - camelCase
 
 Naming/VariableNumber:
-  EnforcedStyle: normalcase
+  EnforcedStyle: snake_case
   SupportedStyles:
     - snake_case
     - normalcase
@@ -1189,6 +1189,9 @@ RSpec/ExampleLength:
 RSpec/ExpectInHook:
   Enabled: false
 
+RSpec/Rails/InferredSpecType:
+  Enabled: false
+
 RSpec/IteratedExpectation:
   Enabled: true
 
@@ -1205,6 +1208,9 @@ RSpec/NestedGroups:
   Max: 7
 
 RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/Rails/NegationBeValid:
   Enabled: false
 
 # RSpec/RepeatedExampleGroupDescription:
