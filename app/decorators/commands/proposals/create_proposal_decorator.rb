@@ -23,7 +23,7 @@ class Commands::Proposals::CreateProposalDecorator
               author_phone: form.author_phone,
               component: form.component
             )
-            proposal.add_coauthor(@current_user, user_group: user_group)
+            proposal.add_coauthor(@current_user, user_group:)
             proposal.save!
             proposal
           end

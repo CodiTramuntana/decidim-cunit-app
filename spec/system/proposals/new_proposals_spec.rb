@@ -5,11 +5,11 @@ require "rails_helper"
 describe "Proposals" do
   include_context "with a component"
   let(:manifest_name) { "proposals" }
-  let!(:user) { create(:user, :confirmed, organization: organization) }
+  let!(:user) { create(:user, :confirmed, organization:) }
   let!(:component) do
     create(:proposal_component,
            :with_creation_enabled,
-           manifest: manifest,
+           manifest:,
            participatory_space: participatory_process)
   end
 
@@ -24,7 +24,7 @@ describe "Proposals" do
     end
 
     context "and personal data are enable in component" do
-      let!(:draft) { create(:proposal, :draft, component: component, users: [user]) }
+      let!(:draft) { create(:proposal, :draft, component:, users: [user]) }
 
       before do
         component.update(settings: { personal_data: true })

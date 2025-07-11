@@ -19,11 +19,11 @@ module Decidim
         )
       end
 
-      let!(:proposal) { create(:proposal, component: component, users: [author]) }
-      let(:author) { create(:user, organization: organization) }
+      let!(:proposal) { create(:proposal, component:, users: [author]) }
+      let(:author) { create(:user, organization:) }
 
       let(:user_group) do
-        create(:user_group, :verified, organization: organization, users: [author])
+        create(:user_group, :verified, organization:, users: [author])
       end
 
       let(:latitude) { 40.1234 }
@@ -37,10 +37,10 @@ module Decidim
         let(:author_surname) { "Ronald" }
         let(:form_params) do
           {
-            title: title,
-            body: body,
-            author_name: author_name,
-            author_surname: author_surname,
+            title:,
+            body:,
+            author_name:,
+            author_surname:,
             author_phone: "650650650",
             address: nil,
             has_address: false,
@@ -51,7 +51,7 @@ module Decidim
             add_photos: [],
             documents: [],
             add_documents: [],
-            errors: errors
+            errors:
           }
         end
 

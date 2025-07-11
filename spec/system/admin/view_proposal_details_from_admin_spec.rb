@@ -10,7 +10,7 @@ describe "Admin views proposal details from admin" do
   include ActionView::Helpers::TextHelper
 
   let(:participatory_process_scope) { nil }
-  let(:participatory_process) { create(:participatory_process, :with_steps, organization: organization, scope: participatory_process_scope) }
+  let(:participatory_process) { create(:participatory_process, :with_steps, organization:, scope: participatory_process_scope) }
   let!(:other_user) { create(:user, organization: current_component.organization) }
   let!(:proposal) { create(:proposal, component: current_component, users: [other_user]) }
 
